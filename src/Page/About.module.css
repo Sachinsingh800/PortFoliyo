@@ -1,0 +1,29 @@
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 91vh;
+    background: linear-gradient(180deg, rgba(60,177,252,1) 0%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%);
+}
+.left{
+    width: 50%;
+    /* border: 1px red solid; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+}
+.right{
+    width: 50%;
+    /* border: 1px red solid; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.img{
+    height:20rem;
+    filter: drop-shadow(20px 20px 10px rgb(0, 0, 0));
+
+}
