@@ -4,6 +4,7 @@
     color: white;
     background: linear-gradient(180deg, rgba(60,177,252,1) 0%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%);
     text-align: center;
+    padding: 0rem 5rem 0rem 5rem;
 }
 .img{
     height: 10rem;
@@ -11,4 +12,5 @@
     margin-top: 3rem;
     border-radius: 20px;
     box-shadow: 2px 0px 8px 2px black;
+    width: 15rem;
 }
