@@ -1,10 +1,11 @@
 import React from 'react'
 import style from "./RightSection.module.css"
+import image from "./dp.png"
 
 function RightSection() {
   return (
     <div>
-      <img className={style.img} src="https://www.theappguruz.com/tag-tools/web/CSSAnimations/tag-logo.png" />
+      <img className={style.img} src={image} />
     </div>
   )
 }
