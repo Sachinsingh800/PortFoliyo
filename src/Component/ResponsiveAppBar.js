@@ -9,14 +9,14 @@ function ResponsiveAppBar() {
   return (
     <Navbar className={style.nav} expand="lg">
       <Container >
-        <Navbar.Brand href="#home"><img className={style.img} src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrq8SV71H_zog4q6pSXpPA-XZsH7sL-vsHOg&usqp=CAU"} /></Navbar.Brand>
+        <Navbar.Brand  href="#home"><img className={style.img} src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrq8SV71H_zog4q6pSXpPA-XZsH7sL-vsHOg&usqp=CAU"} /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/About">About</Nav.Link>
-            <Nav.Link href="/Project">Project</Nav.Link>
-            <Nav.Link href="/Contact">Contact</Nav.Link>
+            <Nav.Link  href="/" style={{color:"red"}}>Home</Nav.Link>
+            <Nav.Link href="/About" style={{color:"red"}}>About</Nav.Link>
+            <Nav.Link href="/Project" style={{color:"red"}}>Project</Nav.Link>
+            <Nav.Link href="/Contact" style={{color:"red"}}>Contact</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

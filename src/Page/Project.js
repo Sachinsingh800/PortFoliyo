@@ -7,7 +7,7 @@ function Project() {
     <>
     <ResponsiveAppBar />
     <div className={style.main}>
-      <h1>Project page</h1>
+      <h1>Projects</h1>
         <img className={style.img} src={"https://i.tribune.com.pk/media/images/1201036-Twitterfreefall-1476711011/1201036-Twitterfreefall-1476711011.gif"} />
         <img className={style.img} src={"https://cdn.dribbble.com/users/309027/screenshots/1907080/google-docs-animation-_2x.gif"} />
         <img className={style.img} src={"https://cdn.cloudflare.steamstatic.com/steam/apps/957070/extras/Intelligent_FieldingE1.gif?t=1627408609"} />
