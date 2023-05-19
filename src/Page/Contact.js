@@ -8,7 +8,11 @@ function Contact() {
     <>
     <ResponsiveAppBar />
     <div className={style.main}>
+      <div className={style.contain}>
       <h1>Contact page</h1>
+      <h3>✉️ Email-sachinsinghgnc@gmail.com</h3>
+      </div>
+
       <img className={style.img} src={image} />
     </div>
     </>

@@ -10,3 +10,6 @@
     height: 20rem;
     filter: drop-shadow(10px 10px 40px black);
 }
+.contain{
+    text-align: center;
+}
