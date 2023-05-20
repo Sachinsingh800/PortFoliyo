@@ -88,7 +88,24 @@ body{
     color: white;
     font-size: x-large;
 }
+.About-about{
+    display: flex;
+    justify-content: center;
+    padding: 0rem 4rem 0rem 7.2rem;
+    flex-direction: column;
+    /* border: 1px red solid; */
+    width: 50%;
+    color: white;
+    font-size: x-large;
+}
 .dp-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px red solid; */
+    width: 50%;
+}
+.dp-img1{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -165,4 +182,24 @@ header{
         -webkit-transform: none;
         transform: none;
         }
+        }
+        .Project-main{
+            display: inline-table;
+            width: 100vw;
+            height: 100vh;
+            padding: 1rem;
+        }
+        .img{
+            margin: 4rem;
+            border-radius: 20px;
+            filter: drop-shadow(0 0 0.75rem rgb(192, 70, 94));
+        }
+        .img:hover{
+            transform: scale(1.2);
+        }
+        #Project h1{
+            font-size: xx-large;
+            color:white;
+            text-align: center;
+            margin-top: 3rem;
         }
