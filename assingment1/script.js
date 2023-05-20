@@ -5,7 +5,6 @@ gsap.from("#About",{
         trigger:"#About",
         scroller:"body",
         start:"top 40%",
-        markers:true
     }
 })
 
