@@ -75,8 +75,12 @@ body{
     height: 100vh;
     display: flex;
     /* border: 1px red solid; */
-    
-    
+}
+.container1{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    /* border: 1px red solid; */
 }
 .about{
     display: flex;
@@ -240,6 +244,29 @@ input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid
 }
 
 @media only screen and (max-width: 768px){
+  .container{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .container1{
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+    height: max-content;
+  }
+  .about{
+  
+    width: 100vw;
+
+  }
+  .About-about{
+    width: 100vw;
+  }
+  .navlink{
+    display: none;
+  }
     .styled-input {
         width:100%;
     }
