@@ -59,6 +59,9 @@ nav ul {
 .dp{
     filter: drop-shadow(0 0 0.75rem rgb(192, 70, 94));
 }
+.dp1{
+    filter: drop-shadow(0 0 0.75rem rgb(192, 70, 94));
+}
 body{
     display: flex;
     flex-direction: column;
