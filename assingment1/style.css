@@ -197,7 +197,7 @@ header{
         .img:hover{
             transform: scale(1.2);
         }
-        #Project h1{
+        #Project-Page h1{
             font-size: xx-large;
             color:white;
             text-align: center;
