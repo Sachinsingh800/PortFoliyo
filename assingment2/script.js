@@ -1,40 +1,71 @@
-// script.js
-const apiKey = "AJtcMayEAmEpDyVzNLF7W5zr1Pdpk7VQ";
+date=document.getElementById('date-time')
+const temp=document.getElementById('temp')
+let currentCity="delhi"
+let currentUnit="c"
+let hourlyorweek="week"
 
-// Function to fetch weather data based on latitude and longitude
-function getWeatherByLatLong() {
-  const url = "https://api.tomorrow.io/v4/timelines?location=28.7041,77.1025&fields=temperature&timesteps=1h&units=metric&apikey=" + apiKey;
 
-  fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      const temperature = data.data.timelines[0].intervals[0].values.temperature;
-      const location = "Bihar, India";
 
-      document.getElementById("location").textContent = location;
-      document.getElementById("temperature").textContent = `Temperature: ${temperature}°C`;
-    })
-    .catch(error => console.error(error));
+//
+function getDateTime(){
+    let now=new Date(),
+    hour=now.getHours(),
+    minute=now.getMinutes();
+
+    let days=[
+        "Sunday",
+        "Monday",
+         "Tuesday",
+         "Wednesday",
+         "Thursday",
+         "Friday",
+         "Saturday"
+    ];
+    hour=hour % 12
+    if(hour <10){
+        hour='0'+hour
+    }
+    if(minute <10){
+        minute='0'-minute
+    }
+    let dayString=days[now.getDay()]
+    return `${dayString}, ${hour}:${minute}`
+
 }
+date.innerText=getDateTime()
 
-// Function to fetch weather data based on location name
-function getWeatherByName() {
-  const url = "https://api.tomorrow.io/v4/weather/forecast?location=delhi&apikey=" + apiKey;
+setInterval(()=>{
+    date.innerText=getDateTime()
+},1000)
 
-  fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      const temperature = data.data.temperature;
-      const description = data.data.weather.description;
-      const location = "Delhi, India";
-
-      document.getElementById("location").textContent = location;
-      document.getElementById("temperature").textContent = `Temperature: ${temperature}°C`;
-      document.getElementById("description").textContent = `Description: ${description}`;
+function getPublicIp(){
+    fetch(`https://api.tomorrow.io/v4/weather/forecast?location=delhi&apikey=AJtcMayEAmEpDyVzNLF7W5zr1Pdpk7VQ`,{
+        method:"GET"
+    }).then((response)=>response.json())
+    .then((data)=>{
+       console.log(data.name)
+        currentCity=data.currentCity,
+        getWetherData(data.city,currentUnit,hourlyorweek)
     })
-    .catch(error => console.error(error));
 }
-
-// Call the functions to fetch weather data
-getWeatherByLatLong();
-getWeatherByName();
+getPublicIp()
+function getWetherData(city,unit,hourlyorweek){
+    const apikey="AJtcMayEAmEpDyVzNLF7W5zr1Pdpk7VQ"
+    fetch(`https://api.tomorrow.io/v4/timelines?location=28.7041,77.1025&fields=temperature&timesteps=1h&units=metric&apikey=AJtcMayEAmEpDyVzNLF7W5zr1Pdpk7VQ`,
+    {
+        method:"GET",
+    }).then((response)=>response.json())
+    .then((data)=>{
+        let today= data.data.timelines[0].intervals[0].values.temperature;
+       
+        
+        if(unit==="c"){
+            temp.innerText=today
+        }else{
+            temp.innerText=celciusToFahranheit(today.temperature)
+        }
+    })
+}
+function celciusToFahranheit(){
+    return ((temp*9)/5+32).toFixed(1)
+}

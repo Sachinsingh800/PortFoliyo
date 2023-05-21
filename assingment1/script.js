@@ -1,4 +1,4 @@
-gsap.from("#About",{
+gsap.from("#About" ,"#Project",{
     opacity:0,
     duration:1,
     scrollTrigger:{
