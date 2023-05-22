@@ -33,6 +33,7 @@
       .catch(error => {
           console.error(error);
       });
+     
     });
     
     const datas=JSON.parse( localStorage.getItem("data"))
