@@ -22,7 +22,7 @@
     buttonElement.addEventListener('click', (e) => {
         e.preventDefault()
       inputValue = inputElement.value;
-      fetch(`https://api.tomorrow.io/v4/weather/forecast?location=${inputValue}&apikey=weN4iXosfA5gx7S00F0Jq4GRGaGulnq5`)
+      fetch(`https://api.tomorrow.io/v4/weather/forecast?location=${inputValue}&apikey=1ol3TE3Rd1Do0E3AdgoGSivElveB4b6a`)
       .then(response => response.json())
       .then(data => {
           console.log(data )
