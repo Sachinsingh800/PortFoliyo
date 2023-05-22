@@ -29,6 +29,7 @@
           console.log(data )
           localStorage.setItem("data",JSON.stringify(data)) 
           const datas=JSON.parse( localStorage.getItem("data"))
+          storage()
       })
       .catch(error => {
           console.error(error);
@@ -36,7 +37,6 @@
      
     });
     
-    const datas=JSON.parse( localStorage.getItem("data"))
 
     const specificDate = new Date(datas.timelines.daily[0].time);
     
@@ -59,6 +59,7 @@ const sunriseTime= new Date(dateTimeString1);
 
 const  sunrise= sunriseTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric' });
 
+ 
 
 function storage(){
     const datas=JSON.parse( localStorage.getItem("data"))
@@ -81,8 +82,9 @@ function storage(){
     weatherElement8.textContent = ` ${air }`;
     weatherElement9.textContent = ` ${dayName }`;
     weatherElement10.textContent = ` ${temperature }`;
+
 }
-storage()
+
 
 
 
