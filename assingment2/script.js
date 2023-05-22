@@ -37,10 +37,6 @@
     });
 
 
-
-
-
-
 function storage(){
     const datas=JSON.parse( localStorage.getItem("data"))
 
@@ -53,10 +49,6 @@ function storage(){
     const dayName = daysOfWeek[dayOfWeek];
 
     console.log("day",dayName)
-
-
-
-
 
 
     const temperature = datas.timelines.daily[0].values.temperatureAvg ;
