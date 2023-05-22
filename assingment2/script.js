@@ -36,7 +36,14 @@
       });
      
     });
-    
+
+
+
+
+
+
+function storage(){
+    const datas=JSON.parse( localStorage.getItem("data"))
 
     const specificDate = new Date(datas.timelines.daily[0].time);
     
@@ -45,48 +52,35 @@
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     
     const dayName = daysOfWeek[dayOfWeek];
-    
 
-const dateTimeString =datas.timelines.daily[0].values.sunsetTime
-const sunsetTime = new Date(dateTimeString);
+    console.log("day",dayName)
 
-const sunset = sunsetTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric' });
 
-  
 
-const dateTimeString1 =datas.timelines.daily[0].values.sunriseTime
-const sunriseTime= new Date(dateTimeString1);
 
-const  sunrise= sunriseTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric' });
 
- 
 
-function storage(){
-    const datas=JSON.parse( localStorage.getItem("data"))
-    console.log(datas)
     const temperature = datas.timelines.daily[0].values.temperatureAvg ;
     const uv = datas.timelines.daily[0].values.uvIndexAvg ;
     const wind = datas.timelines.daily[0].values.windSpeedAvg    ;
     const humidity = datas.timelines.daily[0].values.humidityAvg;
     const visibility = datas.timelines.daily[0].values.visibilityAvg ;
     const air = datas.timelines.daily[0].values.pressureSurfaceLevelAvg;
+    const cloudCoverAvg = datas.timelines.daily[0].values.cloudCoverAvg;
     const location = datas.location.name ;
     weatherElement.textContent = `Temperature: ${temperature}°C`;
     weatherElement1.textContent = `location: ${location}`;
     weatherElement2.textContent = ` ${dayName }`;
     weatherElement3.textContent = ` ${uv }`;
     weatherElement4.textContent = ` ${wind }`;
-    weatherElement5.textContent = ` sunrise:${sunrise } sunset:${sunset }`;
+    weatherElement5.textContent = ` ${cloudCoverAvg }`;
     weatherElement6.textContent = ` ${humidity}`;
     weatherElement7.textContent = ` ${visibility }`;
     weatherElement8.textContent = ` ${air }`;
     weatherElement9.textContent = ` ${dayName }`;
     weatherElement10.textContent = ` ${temperature }`;
-
 }
-
-
-
+storage()
 
 
 
