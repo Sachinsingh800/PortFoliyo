@@ -12,6 +12,20 @@
     const weatherElement8= document.getElementById('air');
     const weatherElement9= document.getElementById('day-name');
     const weatherElement10= document.getElementById('temp-unit');
+    const inputElement = document.getElementById('myInput');
+    const buttonElement = document.getElementById('myButton');
+
+    let inputValue = '';
+
+    buttonElement.addEventListener('click', (e) => {
+      e.preventDefault();
+      inputValue = inputElement.value;
+      console.log('Input value:', inputValue);
+      inputElement.value = '';
+    });
+    
+
+
 
     const datas=JSON.parse( localStorage.getItem("data"))
 
@@ -42,18 +56,15 @@ console.log('The converted time is 2', sunrise);
 
 
 function getdata(){
-    fetch(`https://api.tomorrow.io/v4/weather/forecast?location=delhi&apikey=xk6fiLn8xa39wzbnKFuDeJDKFvFYD5Dp`)
+    fetch(`https://api.tomorrow.io/v4/weather/forecast?location=${inputValue}&apikey=xk6fiLn8xa39wzbnKFuDeJDKFvFYD5Dp`)
         .then(response => response.json())
         .then(data => {
             console.log(data )
-            localStorage.setItem("data",JSON.stringify(data))
-         
+            localStorage.setItem("data",JSON.stringify(data)) 
         })
         .catch(error => {
             console.error(error);
         });
-
-
     }
     
 // getdata()
