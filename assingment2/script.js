@@ -12,21 +12,29 @@
     const weatherElement8= document.getElementById('air');
     const weatherElement9= document.getElementById('day-name');
     const weatherElement10= document.getElementById('temp-unit');
+  
+
+    let inputValue = 'delhi';
+
+
     const inputElement = document.getElementById('myInput');
     const buttonElement = document.getElementById('myButton');
-
-    let inputValue = '';
-
+    
     buttonElement.addEventListener('click', (e) => {
-      e.preventDefault();
+        e.preventDefault()
       inputValue = inputElement.value;
-      inputElement.value = '';
+      fetch(`https://api.tomorrow.io/v4/weather/forecast?location=${inputValue}&apikey=weN4iXosfA5gx7S00F0Jq4GRGaGulnq5`)
+      .then(response => response.json())
+      .then(data => {
+          console.log(data )
+          localStorage.setItem("data",JSON.stringify(data)) 
+          const datas=JSON.parse( localStorage.getItem("data"))
+      })
+      .catch(error => {
+          console.error(error);
+      });
     });
     
-    // You can now use `inputValue` outside the event listener function
-    console.log('Outside the event listener:', inputValue);
-
-
     const datas=JSON.parse( localStorage.getItem("data"))
 
     const specificDate = new Date(datas.timelines.daily[0].time);
@@ -50,22 +58,6 @@ const sunriseTime= new Date(dateTimeString1);
 
 const  sunrise= sunriseTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric' });
 
-  
-
-
-function getdata(){
-    fetch(`https://api.tomorrow.io/v4/weather/forecast?location=${inputValue}&apikey=weN4iXosfA5gx7S00F0Jq4GRGaGulnq5`)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data )
-            localStorage.setItem("data",JSON.stringify(data)) 
-        })
-        .catch(error => {
-            console.error(error);
-        });
-    }
-    
-getdata()
 
 function storage(){
     const datas=JSON.parse( localStorage.getItem("data"))
