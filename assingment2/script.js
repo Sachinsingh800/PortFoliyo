@@ -1,6 +1,5 @@
 
-    // const location = 'delhi';
-    // const apiKey = 'AJtcMayEAmEpDyVzNLF7W5zr1Pdpk7VQ';
+  
     const weatherElement = document.getElementById('temp');
     const weatherElement1 = document.getElementById('location');
     const weatherElement2= document.getElementById('date-time');
